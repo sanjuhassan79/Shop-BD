@@ -1,12 +1,15 @@
 import { Button, Grid } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProductItem.css'
 const ProductItem = ({item}) => {
     return (
         
 
 <Grid item xs={6} sm={12} md={4}>
-<div className="card">
+
+   <Link to={`/product/${item._id}`}>
+   <div className="card">
                <div className="circle"></div> 
                <div className="content">
                    <h2>fdgdfghdfghfghfg</h2>
@@ -15,6 +18,8 @@ const ProductItem = ({item}) => {
                </div>
                <img src={item.img} alt="" />
             </div>
+       </Link> 
+
     </Grid>
 
 

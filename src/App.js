@@ -10,7 +10,8 @@ import './App.css';
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
+ 
 } from "react-router-dom";
 // import DeshHome from './Deshbords/pages/DeshHome';
 // import User from './Deshbords/pages/User/User';
@@ -24,20 +25,25 @@ import NewUser from './Deshbords/pages/NewUser/NewUser';
 import NewProduct from './Deshbords/pages/NewProduct/NewProduct';
 import ProductListDash from './Deshbords/pages/ProductListDash/ProductListDash';
 import DeshHome from './Deshbords/pages/DeshHome';
-
+import Success from './components/pages/Success';
+import { useSelector } from "react-redux";
 
 function App() {
+  const user = useSelector((state) => state.user.currentUser);
+  console.log(user.isAdmin);
   return (
     <div>
       <BrowserRouter>
   
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="productList" element={<ProductList />} />
-      <Route path="singleProduct" element={<SingleProduct />} />
+      <Route path="success" element={ <Success />} />
+      <Route path="/products/:category" element={<ProductList />} />
+      <Route path="/product/:id"  element={<SingleProduct />} />
       <Route path="cart" element={<Cart />} />
-      <Route path="Register" element={<Register />} />
-      <Route path="login" element={<Login />} />
+      <Route path="Register" element={user ?<Home /> :<Register />} />
+      
+        <Route path="login" element={user ?<Home /> :<Login />} />
       <Route path="/sanju" element={<Sanju />} >
       
       

@@ -21,10 +21,13 @@ import ListItem from '@mui/material/ListItem';
 
 import { useTheme } from '@mui/material';
 import './Navigation.css'
-
+import { useSelector } from 'react-redux'
 
 const Navigation = () => {
 //   const {user,logout}=useAuth()
+const quantity = useSelector((state) => state.cart.quantity)
+
+// const dispatch = useDispatch()
 const theme=useTheme()
   const useStyke=makeStyles({
 
@@ -105,7 +108,7 @@ const theme=useTheme()
               </Link>
                <Link to="/cart" className="link">
               <li className="sidebarListItem">
-              <Badge badgeContent={4} color="primary">
+              <Badge badgeContent={quantity} color="primary">
                     <ShoppingCartOutlinedIcon color="action" />
                     </Badge>
               </li>
@@ -148,16 +151,8 @@ const theme=useTheme()
               Home
               </li>
               </Link>
-               <Link to="/productList" className="link">
-              <li className="navbarmenu">
-              Product
-              </li>
-              </Link>
-               <Link to="/singleProduct" className="link">
-              <li className="navbarmenu">
-              SingleProduct
-              </li>
-              </Link>
+               
+               
                <Link to="/register" className="link">
               <li className="navbarmenu">
               Register
@@ -175,7 +170,7 @@ const theme=useTheme()
               </Link>
                <Link to="/cart" className="link">
               <li className="navbage">
-              <Badge badgeContent={4} color="primary">
+              <Badge badgeContent={quantity} color="primary">
                     <ShoppingCartOutlinedIcon color="action" />
                     </Badge>
               </li>

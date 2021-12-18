@@ -1,4 +1,5 @@
 import { Grid } from '@mui/material';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { mobile } from '../../Responsive';
 
@@ -46,13 +47,16 @@ const CategoryItem = ({item}) => {
         
             <Grid item xs={6} sm={12} md={4}>
                <Container>
-            <Image src={item.img}></Image>
+                   <Link to={`products/${item.cat}`}>
+                   <Image src={item.img}></Image>
             <Info>
                 <Title>
                     {item.title}
                 </Title>
                 <Button>SHOP NOW</Button>
             </Info>
+                   </Link>
+            
         </Container>
             </Grid>
         

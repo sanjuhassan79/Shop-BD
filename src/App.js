@@ -30,7 +30,7 @@ import { useSelector } from "react-redux";
 
 function App() {
   const user = useSelector((state) => state.user.currentUser);
-  console.log(user.isAdmin);
+  // console.log(user.isAdmin);
   return (
     <div>
       <BrowserRouter>
@@ -40,7 +40,7 @@ function App() {
       <Route path="success" element={ <Success />} />
       <Route path="/products/:category" element={<ProductList />} />
       <Route path="/product/:id"  element={<SingleProduct />} />
-      <Route path="cart" element={<Cart />} />
+      <Route path="cart" element={user ?<Home /> :<Cart />} />
       <Route path="Register" element={user ?<Home /> :<Register />} />
       
         <Route path="login" element={user ?<Home /> :<Login />} />
@@ -68,3 +68,4 @@ function App() {
 }
 
 export default App;
+

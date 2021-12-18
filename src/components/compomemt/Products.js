@@ -19,8 +19,8 @@ const Products = ({cat,filter,sort}) => {
         try{
         const res=await axios.get(
             cat
-            ? `http://localhost:5000/api/products?category=${cat}`
-            : `http://localhost:5000/api/products`
+            ? `https://desolate-retreat-85665.herokuapp.com/api/products?category=${cat}`
+            : `https://desolate-retreat-85665.herokuapp.com/api/products`
            
             
             )

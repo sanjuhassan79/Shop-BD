@@ -1,4 +1,4 @@
-# Getting Started with Create nellie server App
+# Getting Started with Create Shop BD App
 
 This project wasniche product website nellie with [Live Site Link](https://blissful-pare-084de4.netlify.app/).
 This project wasniche product website nellie with [client-side code Link](https://github.com/sanjuhassan79/Shop-BD,).

@@ -32,11 +32,15 @@ transition: 0.5s;
 clip-path: circle(400px at center);
 /* transition: 0.5s; */
 }
+a {
+    text-decoration: none;
+}
 .card img{
     position: absolute;
     top: 57%;left: 50%;
     transform: translate(-50%,-50%);
     height: 300px;
+    width: 29%;
     pointer-events: none;
     transition: 0.5s;
 }

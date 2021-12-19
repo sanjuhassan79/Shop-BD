@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Footer from '../compomemt/Footer';
 import StripeCheckout from 'react-stripe-checkout';
 // import axios from "axios";
-import Announcement from '../compomemt/Announcement';
+// import Announcement from '../compomemt/Announcement';
 import { mobile } from '../../Responsive';
 import Navigation from '../compomemt/Navigation';
 import { useSelector } from 'react-redux'
@@ -188,7 +188,7 @@ const Cart = () => {
   return (
     <Container>
       <Navigation />
-      <Announcement />
+      {/* <Announcement /> */}
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
@@ -204,7 +204,7 @@ const Cart = () => {
             {cart.products?.map((product)=>(
               <Product key={product._id}>
               <ProductDetail>
-                <Image src={product.img} />
+                <Image src={product.image} />
                 <Details>
                   <ProductName>
                     <b>Product:</b> {product.title}
@@ -226,11 +226,12 @@ const Cart = () => {
                 </ProductAmountContainer>
                 <ProductPrice>$ {product.price*product.quantity}</ProductPrice>
               </PriceDetail>
+              <Hr />
             </Product>
-
+            
             ))
             }
-            <Hr />
+            
             
           </Info>
           <Summary>

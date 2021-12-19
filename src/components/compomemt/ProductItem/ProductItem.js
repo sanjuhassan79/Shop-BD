@@ -12,11 +12,12 @@ const ProductItem = ({item}) => {
    <div className="card">
                <div className="circle"></div> 
                <div className="content">
-                   <h2>fdgdfghdfghfghfg</h2>
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quo culpa esse magnam </p>
+                   <h2>{item.title?.slice(2, 80)}</h2>
+                   <p>{item.description?.slice(2, 100)}</p>
+                   <p>{item.price}</p>
                    <Button>BUY NOW</Button>
                </div>
-               <img src={item.img} alt="" />
+               <img src={item.image} alt="" />
             </div>
        </Link> 
 

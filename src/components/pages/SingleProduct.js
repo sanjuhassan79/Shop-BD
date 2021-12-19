@@ -175,11 +175,11 @@ const handleCart=()=>{
       {/* <Announcement /> */}
       <Wrapper>
         <ImgContainer>
-          <Image src={product.img} />
+          <Image src={product.image} />
         </ImgContainer>
         <InfoContainer>
           <Title>{product.title}</Title>
-          <Desc>{product.desc}
+          <Desc>{product.description}
           </Desc>
           <Price>$ {product.price}</Price>
           <FilterContainer>
